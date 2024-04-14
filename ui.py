@@ -3,35 +3,38 @@ from change_data import change_row
 from add_data import add_row
 from print_data import print_file
 from copy_data import copy_row
+from find_data import find_row
 
 
 
 def check_number(n):
-    while n < 1 or n > 6:
+    while n < 1 or n > 7:
         n = int(input("Ошибка, такого номера команды не "
-                      "существует! Введите цифру от 1 до 6\n"
+                      "существует! Введите цифру от 1 до 7\n"
                       "Выберите функцию:\n"
                       "1. Добавить\n"
                       "2. Удалить\n"
                       "3. Изменить\n"
                       "4. Вывод\n"
-                      "5. Выход\n"
-                      "6. Копировать\n"
+                       "5. Копировать\n"
+                       "6. Найти контакт\n"
+                        "7. Выход\n"
                       "Введите номер команды: "))
     return n
 
 
 def start_menu():
     command = None
-    while command != 5:
+    while command != 7:
         command = int(input("Доброго времени суток!\n"
                             "Выберите функцию:\n"
                             "1. Добавить\n"
                             "2. Удалить\n"
                             "3. Изменить\n"
                             "4. Вывод\n"
-                            "5. Выход\n"
-                            "6. Копировать\n"
+                            "5. Копировать\n"
+                            "6. Найти контакт\n"
+                            "7. Выход\n"
                             "Введите номер команды: "))
         command = check_number(command)
         if command == 1:
@@ -42,8 +45,10 @@ def start_menu():
             change_row()
         elif command == 4:
             print_file()
-        elif command == 6:
+        elif command == 5:
             copy_row()
+        elif command == 6:
+            find_row()
     print("Спасибо, что воспользовались нашими услугами!\n"
           "Всего доброго! Приходите к нам ещё :)")
     
